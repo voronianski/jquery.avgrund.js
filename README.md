@@ -19,7 +19,13 @@ You can simply init Avgrund with one line:
 $('element').avgrund();
 ```
 
-Or you're also able to use some of the options that let you customize it as you wish.
+and linking 'avgrund.css' file to the project:
+
+```html
+<link rel="stylesheet" href="path/to/your/avgrund.css">
+```
+
+You're also able to use some of the options that let you customize it as you wish.
 
 ```javascript
 $('element').avgrund({			
