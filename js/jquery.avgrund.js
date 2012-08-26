@@ -9,7 +9,7 @@
 	$.fn.avgrund = function(options) {
 		var defaults = {
 			width: 380, // max = 640
-			height: '280', // max = 350
+			height: 280, // max = 350
 			showClose: false,
 			showCloseText: '',
 			holderClass: '',
