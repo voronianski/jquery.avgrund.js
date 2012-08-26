@@ -9,7 +9,7 @@ File size is ~1.9Kb
 
 Documentation and examples are here: http://labs.voronianski.com/jquery.avgrund.js/
 
-Inspired by Hakimel's demo: https://github.com/hakimel/avgrund
+Inspired by Hakimel's demo: https://github.com/hakimel/avgrund/
 
 ## Usage
 
