@@ -58,7 +58,7 @@ body.avgrund-active {
 	-ms-transform: scale(0.9);
 	-o-transform: scale(0.9);
 	transform: scale(0.9);
-	overflow: hidden; /* TIP: disables scrolling for long documents */
+	/* overflow: hidden; TIP: disables scrolling for long documents */
 }
 
 .avgrund-active .avgrund-popin {
@@ -93,4 +93,12 @@ body.avgrund-active {
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
 	transform: scale(1.1);
+}
+
+.avgrund-active .avgrund-blur {
+	-webkit-filter: blur(1px);
+	-moz-filter: blur(1px);
+	-ms-filter: blur(1px);
+	-o-filter: blur(1px);
+	filter: blur(1px);
 }
