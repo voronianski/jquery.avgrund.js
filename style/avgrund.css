@@ -58,6 +58,7 @@ body.avgrund-active {
 	-ms-transform: scale(0.9);
 	-o-transform: scale(0.9);
 	transform: scale(0.9);
+	overflow: hidden; /* TIP: disables scrolling for long documents */
 }
 
 .avgrund-active .avgrund-popin {
