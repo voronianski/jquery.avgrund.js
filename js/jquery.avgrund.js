@@ -17,6 +17,7 @@
 			holderClass: '',
 			overlayClass: '',
 			enableStackAnimation: false,
+			onBlurContainer: '',
 			template: '<p>This is test popin content!</p>'
 		};
 		var options = $.extend(defaults, options);
@@ -43,6 +44,10 @@
 
 			if (options.enableStackAnimation == true) {
 				$('.avgrund-popin').addClass('stack');
+			}
+
+			if (options.onBlurContainer != '') {
+				$(options.onBlurContainer).addClass('avgrund-blur');
 			}
 			
 			// close popup by clicking Esc button
