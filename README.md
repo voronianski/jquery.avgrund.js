@@ -14,7 +14,7 @@ Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 ##Update (Aug 31, 2012)
 New options added - disable closing popup by 'Esc' and 'Document click'. Blur css filter for browsers that support it (seems only webkit ones for now).
 
-## Usage
+### Usage
 
 You can simply init Avgrund with one line:
 
