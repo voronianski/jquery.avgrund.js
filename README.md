@@ -1,15 +1,15 @@
-# Avgrund
+# Avgrund++
 
-Avgrund is a jQuery plugin for your modal boxes and popups. It uses new concept showing depth between popup and page.
+Avgrund++ is a jQuery plugin for your modal boxes and popups. It uses new concept showing depth between popup and page.
 It works in all modern browsers and gracefully degrade in those that do not support CSS transitions and transformations.
 
 Tested with jQuery versions 1.4+
 
 File size is ~1.9Kb
 
-Documentation and examples are here: http://labs.voronianski.com/jquery.avgrund.js/
-
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
+
+Further inspired from : https://github.com/voronianski/jquery.avgrund.js
 
 ## Usage
 
@@ -31,11 +31,13 @@ You're also able to use some of the options that let you customize it as you wis
 $('element').avgrund({			
 	width: 380, // max is 640px
 	height: 280, // max is 350px
-	showClose: false, // switch to 'true' for enabling close button 
+	showClose: false, // switch to 'true' for enabling close button
+	escapeClose: true, // switch to 'true' for enabling close using the Esc key
+	documentClose: false, // switch to 'true' for enabling close when clicking outside of the modal
 	showCloseText: '', // type your text for close button
 	holderClass: '', // lets you name custom class for popin holder..
 	overlayClass: '', // ..and overlay block
-	enableStackAnimation: false, // enables different type of popin's animation
+	enableStackAnimation: false, // another animation type
 	template: 'Your content goes here..'
 });
 ```
