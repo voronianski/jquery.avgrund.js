@@ -55,11 +55,15 @@
 			}
 			
 			// close popup by clicking outside it
-			if (options.closeByDocument == true) {
-				function onDocumentClick(e) {
+			function onDocumentClick(e) {
+				if (options.closeByDocument == true) {
 					if ($(e.target).is('.avgrund-overlay, .avgrund-close')) {
 						deactivate();
 					}
+				} else {
+					if ($(e.target).is('.avgrund-close')) {
+						deactivate();
+					}	
 				}
 			}
 
