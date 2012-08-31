@@ -1,16 +1,19 @@
 /**
- *  jQuery Avgrund Popin Plugin
+ *  jQuery Avgrund++ Plugin
  *  Inspired by concept in vanilla js - https://github.com/hakimel/Avgrund/
- * 
- *  MIT licensed, (c) 2012 http://pixelhunter.me/
+ *  Further Inspired by concept in  js - http://labs.voronianski.com/jquery.avgrund.js/
+ 
+ *  MIT licensed, (c) 2012 http://ryanmcdonough.co.uk
  */
 
 (function($) {
 	$.fn.avgrund = function(options) {
 		var defaults = {
 			width: 380, // max = 640
-			height: 280, // max = 350
+			height: '280', // max = 350
 			showClose: false,
+			escapeClose: true,
+			documentClose: true,
 			showCloseText: '',
 			holderClass: '',
 			overlayClass: '',
@@ -34,6 +37,22 @@
 				'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
 				'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
 			});
+			
+			if (options.escapeClose == true) {
+				function onDocumentKeyup(e) {
+				if (e.keyCode === 27) {
+					deactivate();
+				}
+			}
+			}
+			
+			if (options.documentClose == true) {
+				function onDocumentClick(e) {
+				if ($(e.target).is('.avgrund-overlay')) {
+					deactivate();
+				}
+			}
+			}
 
 			if (options.showClose == true) {
 				$('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
@@ -43,14 +62,8 @@
 				$('.avgrund-popin').addClass('stack');
 			}
 
-			function onDocumentKeyup(e) {
-				if (e.keyCode === 27) {
-					deactivate();
-				}
-			}
-
 			function onDocumentClick(e) {
-				if ($(e.target).is('.avgrund-overlay, .avgrund-close')) {
+				if ($(e.target).is('.avgrund-close')) {
 					deactivate();
 				}
 			}
