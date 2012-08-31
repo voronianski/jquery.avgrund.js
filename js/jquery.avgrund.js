@@ -12,6 +12,8 @@
 			height: 280, // max = 350
 			showClose: false,
 			showCloseText: '',
+			closeByEscape: true,
+			closeByDocument: true,
 			holderClass: '',
 			overlayClass: '',
 			enableStackAnimation: false,
@@ -42,16 +44,22 @@
 			if (options.enableStackAnimation == true) {
 				$('.avgrund-popin').addClass('stack');
 			}
-
-			function onDocumentKeyup(e) {
-				if (e.keyCode === 27) {
-					deactivate();
+			
+			// close popup by clicking Esc button
+			if (options.closeByEscape == true) {
+				function onDocumentKeyup(e) {
+					if (e.keyCode === 27) {
+						deactivate();
+					}
 				}
 			}
-
-			function onDocumentClick(e) {
-				if ($(e.target).is('.avgrund-overlay, .avgrund-close')) {
-					deactivate();
+			
+			// close popup by clicking outside it
+			if (options.closeByDocument == true) {
+				function onDocumentClick(e) {
+					if ($(e.target).is('.avgrund-overlay, .avgrund-close')) {
+						deactivate();
+					}
 				}
 			}
 
