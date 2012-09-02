@@ -49,7 +49,7 @@ body.avgrund-ready,
 	-moz-transition: 0.3s all ease-out;
 	-ms-transition: 0.3s all ease-out;
 	-o-transition: 0.3s all ease-out;
-	transition: 0.3s all ease-out
+	transition: 0.3s all ease-out;
 }
 
 body.avgrund-active {
