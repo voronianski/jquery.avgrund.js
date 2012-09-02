@@ -1,7 +1,7 @@
 /**
  *  jQuery Avgrund Popin Plugin
  *  Inspired by concept in vanilla js - https://github.com/hakimel/Avgrund/
- * 
+ *
  *  MIT licensed, (c) 2012 http://pixelhunter.me/
  */
 
@@ -28,7 +28,7 @@
 				maxHeight = options.height > 350 ? 350 : options.height;
 
 			body.addClass('avgrund-ready');
-			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
+			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + options.template + '</div>');
 
 			$('.avgrund-popin').css({
@@ -51,12 +51,13 @@
 			}
 			
 			// close popup by clicking Esc button
+			var onDocumentKeyup;
 			if (options.closeByEscape == true) {
-				function onDocumentKeyup(e) {
+				onDocumentKeyup = function(e) {
 					if (e.keyCode === 27) {
 						deactivate();
 					}
-				}
+				};
 			}
 			
 			// close popup by clicking outside it
@@ -68,7 +69,7 @@
 				} else {
 					if ($(e.target).is('.avgrund-close')) {
 						deactivate();
-					}	
+					}
 				}
 			}
 
@@ -96,5 +97,5 @@
 			});
 		});
 
-	}
-})(jQuery)
+	};
+})(jQuery);
