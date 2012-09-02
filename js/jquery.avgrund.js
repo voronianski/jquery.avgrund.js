@@ -51,8 +51,8 @@
 			}
 			
 			// close popup by clicking Esc button
-			if (options.closeByEscape == true) {
-				function onDocumentKeyup(e) {
+			function onDocumentKeyup(e) {
+				if (options.closeByEscape == true) {
 					if (e.keyCode === 27) {
 						deactivate();
 					}
