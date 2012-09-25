@@ -25,11 +25,12 @@
 		return this.each(function() {
 			var body = $('body'),
 				maxWidth = options.width > 640 ? 640 : options.width,
-				maxHeight = options.height > 350 ? 350 : options.height;
+				maxHeight = options.height > 350 ? 350 : options.height,
+				template = typeof options.template == 'function' ? options.template($(this)) : options.template;
 
 			body.addClass('avgrund-ready');
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
-			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + options.template + '</div>');
+			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
 
 			$('.avgrund-popin').css({
 				'width': maxWidth + 'px',
