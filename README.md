@@ -42,7 +42,9 @@ $('element').avgrund({
 	overlayClass: '', // ..and overlay block
 	enableStackAnimation: false, // enables different type of popin's animation
 	onBlurContainer: '', // enables blur filter for specified block 
-	template: 'Your content goes here..'
+	template: function(el) {
+		return 'Your content is ' + el.attr('title');
+	} // either a string or a function returning a string
 });
 ```
 
