@@ -68,8 +68,10 @@ $('element').avgrund({
 	holderClass: '', // lets you name custom class for popin holder..
 	overlayClass: '', // ..and overlay block
 	enableStackAnimation: false, // enables different type of popin's animation
-	onBlurContainer: '', // enables blur filter for specified block 
-	template: 'Your content goes here..'
+	onBlurContainer: '', // enables blur filter for specified block
+	openOnEvent: true, // set to 'false' to init on load
+	setEvent: 'click' // use your event like 'mouseover', 'touchmove', etc.
+	template: 'Your content goes here..' // or function() { ... } 
 });
 ```
 
