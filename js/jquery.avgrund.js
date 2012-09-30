@@ -1,6 +1,6 @@
 /**
  *  jQuery Avgrund Popin Plugin
- *  Inspired by concept in vanilla js - https://github.com/hakimel/Avgrund/
+ *	http://github.com/voronianski/jquery.avgrund.js/
  * 
  *  MIT licensed, (c) 2012 http://pixelhunter.me/
  */
@@ -18,18 +18,22 @@
 			overlayClass: '',
 			enableStackAnimation: false,
 			onBlurContainer: '',
+			openOnEvent: true,
+			setEvent: 'click',
 			template: '<p>This is test popin content!</p>'
 		};
 		var options = $.extend(defaults, options);
 
 		return this.each(function() {
-			var body = $('body'),
+			var self = $(this),
+				body = $('body'),
 				maxWidth = options.width > 640 ? 640 : options.width,
-				maxHeight = options.height > 350 ? 350 : options.height;
+				maxHeight = options.height > 350 ? 350 : options.height,
+				template = typeof options.template == 'function' ? options.template(self) : options.template;
 
 			body.addClass('avgrund-ready');
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
-			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + options.template + '</div>');
+			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
 
 			$('.avgrund-popin').css({
 				'width': maxWidth + 'px',
@@ -88,12 +92,15 @@
 				body.removeClass('avgrund-active');
 			}
 
-			// init on click
-			$(this).click(function(e) {
-				e.stopPropagation();
-
+			// init on click or custom event
+			if (options.openOnEvent) {
+				self.bind(options.setEvent, function(e) {
+					e.stopPropagation();
+					activate();
+				});
+			} else {
 				activate();
-			});
+			}
 		});
 
 	}

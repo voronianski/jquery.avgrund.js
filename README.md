@@ -11,12 +11,39 @@ Documentation and examples are here: http://labs.voronianski.com/jquery.avgrund.
 
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
+### Update (Sep 30, 2012)
+Some new updates include initializing popin without event:
+
+```javascript
+$(document).avgrund({			
+	openOnEvent: false // set to false to use avgrund on load
+});
+```
+
+Also now you can set up your own event for an element:
+
+```javascript
+$(element).avgrund({			
+	setEvent: 'mouseover' // will open popin on element's mouseover
+});
+```
+
+And can use a function inside avgrund's template option. Thanks to [juice49](https://github.com/juice49) for pull request.
+
+```javascript
+$(element).avgrund({			
+	template: function() {
+		// use return 'your content..' to use string	
+	}
+});
+```
+
 ### Update (Aug 31, 2012)
 New options added - disable closing popup by 'Esc' and 'Document click'. Blur css filter for browsers that support it (seems only webkit ones for now).
 
 ## Usage
 
-You can simply init Avgrund with one line:
+You can simply init Avgrund with one line:will open popin on element's mouseoverwill open popin on elemwill open popin on element's mouseoverent's mouseover
 
 ```javascript
 $('element').avgrund();
