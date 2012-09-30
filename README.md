@@ -28,12 +28,12 @@ $(element).avgrund({
 });
 ```
 
-And can use a function inside avgrund's template option. Thanks to [juice49](https://github.com/juice49) for pull request.
+You can use a custom function inside avgrund's template option. Thanks to [juice49](https://github.com/juice49) for pull request.
 
 ```javascript
 $(element).avgrund({			
 	template: function() {
-		// use return 'your content..' to use string	
+		// return 'your content..' to use string	
 	}
 });
 ```
