@@ -1,6 +1,6 @@
 /**
  *  jQuery Avgrund Popin Plugin
- *	http://github.com/voronianski/jquery.avgrund.js/
+ *  http://github.com/voronianski/jquery.avgrund.js/
  * 
  *  MIT licensed, (c) 2012 http://pixelhunter.me/
  */
