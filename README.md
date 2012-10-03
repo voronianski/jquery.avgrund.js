@@ -43,7 +43,7 @@ New options added - disable closing popup by 'Esc' and 'Document click'. Blur cs
 
 ## Usage
 
-You can simply init Avgrund with one line:will open popin on element's mouseoverwill open popin on elemwill open popin on element's mouseoverent's mouseover
+You can simply init Avgrund with one line:
 
 ```javascript
 $('element').avgrund();
