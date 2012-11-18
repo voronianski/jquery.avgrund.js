@@ -17,7 +17,7 @@ Get 2 new useful options for popin that were missed before. Now you can set your
 ```javascript
 $(element).avgrund({
 	onLoad: function() {
-		console.log('this function will be called before dialog is initialized);
+		console.log('this function will be called before dialog is initialized');
 	},
 	onUnload: function() {
 		console.log('that will be shown after dialog is closed');
