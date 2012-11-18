@@ -11,6 +11,20 @@ Documentation and examples are here: http://labs.voronianski.com/jquery.avgrund.
 
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
+### Update (Nov 18, 2012)
+Get 2 new useful options for popin that were missed before. Now you can set your custom functions before Avgrund dialog is open and after it was closed.
+
+```javascript
+$(element).avgrund({
+	onLoad: function() {
+		console.log('this function will be called before dialog is initialized);
+	},
+	onUnload: function() {
+		console.log('that will be shown after dialog is closed');
+	}
+});
+```
+
 ### Update (Sep 30, 2012)
 Some new updates include initializing popin without event:
 
@@ -70,7 +84,9 @@ $('element').avgrund({
 	enableStackAnimation: false, // enables different type of popin's animation
 	onBlurContainer: '', // enables blur filter for specified block
 	openOnEvent: true, // set to 'false' to init on load
-	setEvent: 'click' // use your event like 'mouseover', 'touchmove', etc.
+	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
+	onLoad: function () { ... }, // set custom call before popin is inited..
+	onUnload: function () { ... }, // ..and after it was closed
 	template: 'Your content goes here..' // or function() { ... } 
 });
 ```

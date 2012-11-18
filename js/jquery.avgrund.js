@@ -20,6 +20,8 @@
 			onBlurContainer: '',
 			openOnEvent: true,
 			setEvent: 'click',
+			onLoad: function() {},
+			onUnload: function() {},
 			template: '<p>This is test popin content!</p>'
 		};
 		var options = $.extend(defaults, options);
@@ -78,6 +80,11 @@
 
 			// show popup
 			function activate() {
+				// check if onLoad is a function and call it before popin is active
+				if (typeof options.onLoad == 'function') {
+					options.onLoad.call(self);
+				}
+
 				body.bind('keyup', onDocumentKeyup);
 				body.bind('click', onDocumentClick);
 
@@ -90,6 +97,11 @@
 				body.unbind('click', onDocumentClick);
 
 				body.removeClass('avgrund-active');
+
+				// check if onUnload is a function and call it after popin is closed
+				if (typeof options.onUnload == 'function') {
+					options.onUnload.call(self);
+				}
 			}
 
 			// init on click or custom event
