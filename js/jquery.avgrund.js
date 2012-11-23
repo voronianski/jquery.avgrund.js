@@ -108,7 +108,12 @@
 			if (options.openOnEvent) {
 				self.bind(options.setEvent, function(e) {
 					e.stopPropagation();
-					e.preventDefault()
+
+					// prevent redirect for href url
+					if ($(e.target).is('a')) {
+						e.preventDefault()
+					}
+
 					activate();
 				});
 			} else {
