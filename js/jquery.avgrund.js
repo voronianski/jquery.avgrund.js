@@ -108,6 +108,7 @@
 			if (options.openOnEvent) {
 				self.bind(options.setEvent, function(e) {
 					e.stopPropagation();
+					e.preventDefault()
 					activate();
 				});
 			} else {
