@@ -34,6 +34,7 @@
 				template = typeof options.template == 'function' ? options.template(self) : options.template;
 
 			body.addClass('avgrund-ready');
+			body.find('.avgrund-overlay').remove(); // prevent multiple overlays
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
 			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
 
