@@ -1,0 +1,27 @@
+{
+	"name": "Avgrund",
+	"version": "1.0.3",
+	"title": "Avgrund Popins",
+	"keywords": [
+		"popin",
+		"modal window",
+		"popup"
+	],
+	"author": {
+		"name": "Dmitri Voronianski",
+		"email": "dmitri.voronianski@gmail.com"
+		"url": "http://pixelhunter.me"
+	},
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://opensource.org/licenses/MIT"
+		}
+	],
+	"bugs": "https://github.com/voronianski/jquery.avgrund.js/issues",
+	"docs": "https://github.com/voronianski/jquery.avgrund.js",
+	"homepage": "http://labs.voronianski.com/jquery.avgrund.js"
+	"dependencies": {
+		"jquery": ">=1.4"
+	}
+}
