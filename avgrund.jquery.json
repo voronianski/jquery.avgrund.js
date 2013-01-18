@@ -2,6 +2,7 @@
 	"name": "Avgrund",
 	"version": "1.0.3",
 	"title": "Avgrund Popins",
+	"description": "Avgrund is a jquery plugin for modal boxes and popups. It uses new concept showing depth between popup and page. It works in all modern browsers and gracefully degrade in those that do not support CSS transitions and transformations",
 	"keywords": [
 		"popin",
 		"modal window",
