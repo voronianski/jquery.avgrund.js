@@ -102,3 +102,14 @@ body.avgrund-active {
 	-o-filter: blur(1px);
 	filter: blur(1px);
 }
+
+.avgrund-close {
+	display: block;
+	text-transform: uppercase;
+	color: #555;
+	text-decoration: none;
+	position: absolute;
+	top: 6px;
+	right: 10px;
+	font-size: 13px;
+}

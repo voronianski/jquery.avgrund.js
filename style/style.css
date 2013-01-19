@@ -96,17 +96,6 @@ pre, code {
 	text-align: justify;
 }
 
-.avgrund-close {
-	display: block;
-	text-transform: uppercase;
-	color: #555;
-	text-decoration: none;
-	position: absolute;
-	top: 6px;
-	right: 10px;
-	font-size: 13px;
-}
-
 .github, .twitter, .dribble {
 	float: left;
 	text-align: center;
