@@ -36,22 +36,6 @@
 			body.addClass('avgrund-ready');
 			body.find('.avgrund-overlay').remove(); // prevent multiple overlays
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
-			body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
-
-			$('.avgrund-popin').css({
-				'width': maxWidth + 'px',
-				'height': maxHeight + 'px',
-				'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
-				'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
-			});
-
-			if (options.showClose) {
-				$('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
-			}
-
-			if (options.enableStackAnimation) {
-				$('.avgrund-popin').addClass('stack');
-			}
 
 			if (options.onBlurContainer != '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
@@ -84,6 +68,23 @@
 				// check if onLoad is a function and call it before popin is active
 				if (typeof options.onLoad == 'function') {
 					options.onLoad.call(self);
+				}
+				
+				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
+
+				$('.avgrund-popin').css({
+					'width': maxWidth + 'px',
+					'height': maxHeight + 'px',
+					'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
+					'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
+				});
+
+				if (options.showClose) {
+					$('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
+				}
+
+				if (options.enableStackAnimation) {
+					$('.avgrund-popin').addClass('stack');
 				}
 
 				body.bind('keyup', onDocumentKeyup);
