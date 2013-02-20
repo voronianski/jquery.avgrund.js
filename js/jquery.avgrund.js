@@ -40,7 +40,7 @@
 			if (options.onBlurContainer != '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
 			}
-			
+
 			// close popup by clicking Esc button
 			function onDocumentKeyup(e) {
 				if (options.closeByEscape) {
@@ -49,7 +49,7 @@
 					}
 				}
 			}
-			
+
 			// close popup by clicking outside it
 			function onDocumentClick(e) {
 				if (options.closeByDocument) {
@@ -104,6 +104,8 @@
 				if (typeof options.onUnload == 'function') {
 					options.onUnload.call(self);
 				}
+
+				$('.avgrund-popin').remove();
 			}
 
 			// init on click or custom event
