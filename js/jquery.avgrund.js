@@ -31,13 +31,11 @@
 				body = $('body'),
 				maxWidth = options.width > 640 ? 640 : options.width,
 				maxHeight = options.height > 350 ? 350 : options.height,
-				template = typeof options.template == 'function' ? options.template(self) : options.template;
+				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
-			body.addClass('avgrund-ready');
-			body.find('.avgrund-overlay').remove(); // prevent multiple overlays
-			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');				
-
-			if (options.onBlurContainer != '') {
+			body.addClass('avgrund-ready');				
+			
+			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
 			}
 			
@@ -59,17 +57,18 @@
 				} else {
 					if ($(e.target).is('.avgrund-close')) {
 						deactivate();
-					}	
+					}
 				}
 			}
 
 			// show popup
 			function activate() {
 				// check if onLoad is a function and call it before popin is active
-				if (typeof options.onLoad == 'function') {
+				if (typeof options.onLoad === 'function') {
 					options.onLoad.call(self);
 				}
-				
+
+				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
 
 				$('.avgrund-popin').css({
@@ -100,8 +99,16 @@
 
 				body.removeClass('avgrund-active');
 
+				// prevent multiple overlays
+				$('.avgrund-overlay').remove();
+				
+				// remove after small pause to apply special avgrund effect
+				setTimeout(function() {
+					$('.avgrund-popin').remove();
+				}, 500);
+
 				// check if onUnload is a function and call it after popin is closed
-				if (typeof options.onUnload == 'function') {
+				if (typeof options.onUnload === 'function') {
 					options.onUnload.call(self);
 				}
 			}
@@ -113,7 +120,7 @@
 
 					// prevent redirect for href url
 					if ($(e.target).is('a')) {
-						e.preventDefault()
+						e.preventDefault();
 					}
 
 					activate();
