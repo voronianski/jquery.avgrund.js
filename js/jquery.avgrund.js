@@ -6,6 +6,32 @@
  */
 
 (function($) {
+	/* CSS TRANSITION SUPPORT
+	 * https://github.com/twitter/bootstrap/blob/master/js/bootstrap-transition.js
+	 * ==================================================== */
+	$.support.transition = (function () {
+		var transitionEnd = (function () {
+			var el = document.createElement('div')
+				, transEndEventNames = {
+					  'WebkitTransition' : 'webkitTransitionEnd'
+					, 'MozTransition'    : 'transitionend'
+					, 'OTransition'      : 'oTransitionEnd otransitionend'
+					, 'transition'       : 'transitionend'
+					}
+				, name;
+
+			for (name in transEndEventNames){
+				if (el.style[name] !== undefined) {
+					return transEndEventNames[name];
+				}
+			}
+		}());
+
+		return transitionEnd && {
+			end: transitionEnd
+		};
+	})();
+
 	$.fn.avgrund = function(options) {
 		var defaults = {
 			width: 380, // max = 640
@@ -101,11 +127,12 @@
 
 				// prevent multiple overlays
 				$('.avgrund-overlay').remove();
-				
+
 				// remove after small pause to apply special avgrund effect
-				setTimeout(function() {
-					$('.avgrund-popin').remove();
-				}, 500);
+				$.support.transition && $('.avgrund-popin')
+					.one($.support.transition.end, function() {
+						$('.avgrund-popin').remove();
+					});
 
 				// check if onUnload is a function and call it after popin is closed
 				if (typeof options.onUnload === 'function') {
