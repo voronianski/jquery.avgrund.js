@@ -68,9 +68,13 @@
 					options.onLoad.call(self);
 				}
 
+				setTimeout(function() {
+					body.addClass('avgrund-active');
+				}, 100);
+				
 				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
-				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
-
+				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');				
+				
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
 					'height': maxHeight + 'px',
@@ -86,10 +90,11 @@
 					$('.avgrund-popin').addClass('stack');
 				}
 
+				// fixing -webkit overlay 'transform/position:fixed/overflow' issue 
+				body.wrapInner('<div class="avgrund-wrap-inner" />');
+
 				body.bind('keyup', onDocumentKeyup);
 				body.bind('click', onDocumentClick);
-
-				body.addClass('avgrund-active');
 			}
 
 			// hide popup
@@ -105,6 +110,7 @@
 				// remove after small pause to apply special avgrund effect
 				setTimeout(function() {
 					$('.avgrund-popin').remove();
+					$('.avgrund-wrap-inner > *').unwrap();
 				}, 500);
 
 				// check if onUnload is a function and call it after popin is closed
