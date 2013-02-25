@@ -27,7 +27,7 @@ html, body {
 	background: #000;
 	position: fixed;
 	width: 100%;
-	height: 100%;
+	height: 2000px; /* set long height for prevent -webkit position:fixed in transformed element behavior */
 	top: 0;
 	left: 0;
 	z-index: 101;
