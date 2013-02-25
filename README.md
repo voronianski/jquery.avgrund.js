@@ -11,7 +11,7 @@ Documentation and examples are here: http://labs.voronianski.com/jquery.avgrund.
 
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
-### Update (Feb 22, 2013)
+### Update (Feb 25, 2013)
 A bunch of small but very useful fixes and updates, including multiple avgrund popins on a page, removing popins from DOM after deactivation (also fixed an issue to make sure avgrund close effect works) and position:fixed/transform/overflow issue for scrolled pages in -webkit. Highly recommend to update your avgrund to current **1.1.2 version**.
 
 ### Update (Nov 18, 2012)
