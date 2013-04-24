@@ -24,7 +24,7 @@
 			onUnload: function() {},
 			template: '<p>This is test popin content!</p>'
 		};
-		var options = $.extend(defaults, options);
+		options = $.extend(defaults, options);
 
 		return this.each(function() {
 			var self = $(this),
@@ -136,5 +136,5 @@
 			}
 		});
 
-	}
-})(jQuery)
+	};
+})(jQuery);
