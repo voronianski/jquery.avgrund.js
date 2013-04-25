@@ -1,7 +1,7 @@
 /**
  *  jQuery Avgrund Popin Plugin
  *  http://github.com/voronianski/jquery.avgrund.js/
- * 
+ *
  *  MIT licensed, (c) 2012 http://pixelhunter.me/
  */
 
@@ -24,6 +24,7 @@
 			onUnload: function() {},
 			template: '<p>This is test popin content!</p>'
 		};
+
 		options = $.extend(defaults, options);
 
 		return this.each(function() {
@@ -33,12 +34,12 @@
 				maxHeight = options.height > 350 ? 350 : options.height,
 				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
-			body.addClass('avgrund-ready');				
-			
+			body.addClass('avgrund-ready');
+
 			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
 			}
-			
+
 			// close popup by clicking Esc button
 			function onDocumentKeyup(e) {
 				if (options.closeByEscape) {
@@ -47,7 +48,7 @@
 					}
 				}
 			}
-			
+
 			// close popup by clicking outside it
 			function onDocumentClick(e) {
 				if (options.closeByDocument) {
@@ -71,10 +72,10 @@
 				setTimeout(function() {
 					body.addClass('avgrund-active');
 				}, 100);
-				
+
 				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
-				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');				
-				
+				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
+
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
 					'height': maxHeight + 'px',
@@ -90,7 +91,7 @@
 					$('.avgrund-popin').addClass('stack');
 				}
 
-				// fixing -webkit overlay 'transform/position:fixed/overflow' issue 
+				// fixing -webkit overlay 'transform/position:fixed/overflow' issue
 				body.wrapInner('<div class="avgrund-wrap-inner" />');
 
 				body.bind('keyup', onDocumentKeyup);
@@ -106,7 +107,7 @@
 
 				// prevent multiple overlays
 				$('.avgrund-overlay').remove();
-				
+
 				// remove after small pause to apply special avgrund effect
 				setTimeout(function() {
 					$('.avgrund-popin').remove();

@@ -36,8 +36,8 @@ html, body {
 	filter: alpha(opacity=0);
 }
 
-body.avgrund-ready, 
-.avgrund-ready .avgrund-popin, 
+body.avgrund-ready,
+.avgrund-ready .avgrund-popin,
 .avgrund-ready .avgrund-overlay {
 	-webkit-transform-origin: 50% 50%;
 	-moz-transform-origin: 50% 50%;
@@ -108,4 +108,16 @@ body.avgrund-active {
 	position: relative;
 	overflow: hidden;
 	height: 100%;
+}
+
+/* Optional close button styles */
+.avgrund-close {
+	display: block;
+	color: #555;
+	font-size: 13px;
+	text-decoration: none;
+	text-transform: uppercase;
+	position: absolute;
+	top: 6px;
+	right: 10px;
 }
