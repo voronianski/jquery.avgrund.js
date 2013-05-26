@@ -40,7 +40,7 @@ $('element').avgrund({
 	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
 	onLoad: function () { ... }, // set custom call before popin is inited..
 	onUnload: function () { ... }, // ..and after it was closed
-	template: 'Your content goes here..' // or function() { ... }
+	template: 'Your content goes here..' // or function (elem) { ... }
 });
 ```
 
