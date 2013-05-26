@@ -6,8 +6,8 @@
 	<title>jQuery plugin for Avgrund concept popin</title>
 	<link href='http://fonts.googleapis.com/css?family=Headland+One|Open+Sans:400,300&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://labs.voronianski.com/media/style/reset.css">
-	<link rel="stylesheet" href="./style/style.css">
-	<link rel="stylesheet" href="./style/avgrund.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="../style/avgrund.css">
 
 	<!--[if lt IE 9]>
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -32,11 +32,17 @@
 	height: 280, // max is 350px
 	showClose: false, // switch to 'true' for enabling close button
 	showCloseText: '', // type your text for close button
+	closeByEscape: true, // enables closing popup by 'Esc'..
+	closeByDocument: true, // ..and by clicking document itself
 	holderClass: '', // lets you name custom class for popin holder..
 	overlayClass: '', // ..and overlay block
 	enableStackAnimation: false, // another animation type
 	onBlurContainer: '', // enables blur filter for specified block
-	template: 'Your content goes here..'
+	openOnEvent: true, // set to 'false' to init on load
+	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
+	onLoad: function () { ... }, // set custom call before popin is inited..
+	onUnload: function () { ... }, // ..and after it was closed
+	template: 'Your content goes here..' // or function() { ... }
 });</pre>
 		<p>Avgrund plugin was inspired by Hakimel's Avgrund.js <a href="https://github.com/hakimel/avgrund/" target="_blank">demo</a>.</p>
 
@@ -51,8 +57,8 @@
 
 	<a href="https://github.com/voronianski/jquery.avgrund.js" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script src="./jquery.avgrund.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="../jquery.avgrund.js"></script>
 	<script>
 	$(function() {
 		$('#show').avgrund({
