@@ -51,14 +51,14 @@
 
 			// close popup by clicking outside it
 			function onDocumentClick(e) {
-				e.preventDefault();
-
 				if (options.closeByDocument) {
 					if ($(e.target).is('.avgrund-overlay, .avgrund-close')) {
+						e.preventDefault();
 						deactivate();
 					}
 				} else {
 					if ($(e.target).is('.avgrund-close')) {
+						e.preventDefault();
 						deactivate();
 					}
 				}
