@@ -1,6 +1,6 @@
 html, body {
 	height: 100%;
-	overflow: auto; /* TIP: set it to 'auto' if you have long content pages */
+	overflow: auto;
 }
 
 .avgrund-popin {
@@ -25,10 +25,9 @@ html, body {
 
 .avgrund-overlay {
 	background: #000;
-	position: absolute;
 	width: 100%;
-	height: 20000px;
-	top: 0;
+	position: relative;
+	top: -1500px;
 	left: 0;
 	z-index: 101;
 	visibility: hidden;
@@ -58,8 +57,7 @@ body.avgrund-active {
 	-ms-transform: scale(0.9);
 	-o-transform: scale(0.9);
 	transform: scale(0.9);
-	/*overflow: hidden; /* TIP: disables scrolling for long documents */
-	/*position: relative;*/
+	overflow: hidden;
 }
 
 .avgrund-active .avgrund-popin {
@@ -78,6 +76,7 @@ body.avgrund-active {
 	visibility: visible;
 	opacity: .5;
 	filter: alpha(opacity=50);
+	height: 20000px;
 }
 
 .avgrund-popin.stack {
@@ -102,12 +101,6 @@ body.avgrund-active {
 	-ms-filter: blur(1px);
 	-o-filter: blur(1px);
 	filter: blur(1px);
-}
-
-.avgrund-wrap-inner {
-	position: relative;
-	overflow: hidden;
-	height: 100%;
 }
 
 /* Optional close button styles */

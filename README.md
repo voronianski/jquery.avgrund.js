@@ -38,8 +38,8 @@ $('element').avgrund({
 	onBlurContainer: '', // enables blur filter for specified block
 	openOnEvent: true, // set to 'false' to init on load
 	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
-	onLoad: function () { ... }, // set custom call before popin is inited..
-	onUnload: function () { ... }, // ..and after it was closed
+	onLoad: function (elem) { ... }, // set custom call before popin is inited..
+	onUnload: function (elem) { ... }, // ..and after it was closed
 	template: 'Your content goes here..' // or function (elem) { ... }
 });
 ```
@@ -49,6 +49,9 @@ Check the example here: http://labs.voronianski.com/jquery.avgrund.js/
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
 ## Changelog
+
+### Update (June 15, 2013)
+Better fix for overlay and long content pages, minor add-ons.
 
 ### Update (May 26, 2013)
 Few fixes, and plugin is available as bower package now. So you can simply install it as:

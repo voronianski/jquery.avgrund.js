@@ -2,11 +2,12 @@
  *  jQuery Avgrund Popin Plugin
  *  http://github.com/voronianski/jquery.avgrund.js/
  *
- *  MIT licensed, (c) 2012 http://pixelhunter.me/
+ *  (c) 2012-2013 http://pixelhunter.me/
+ *  MIT licensed
  */
 
-(function($) {
-	$.fn.avgrund = function(options) {
+(function ($) {
+	$.fn.avgrund = function (options) {
 		var defaults = {
 			width: 380, // max = 640
 			height: 280, // max = 350
@@ -20,8 +21,8 @@
 			onBlurContainer: '',
 			openOnEvent: true,
 			setEvent: 'click',
-			onLoad: function() {},
-			onUnload: function() {},
+			onLoad: false,
+			onUnload: false,
 			template: '<p>This is test popin content!</p>'
 		};
 
@@ -35,13 +36,13 @@
 				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
 			body.addClass('avgrund-ready');
+			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 
 			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
 			}
 
-			// close popup by clicking Esc button
-			function onDocumentKeyup(e) {
+			function onDocumentKeyup (e) {
 				if (options.closeByEscape) {
 					if (e.keyCode === 27) {
 						deactivate();
@@ -49,8 +50,7 @@
 				}
 			}
 
-			// close popup by clicking outside it
-			function onDocumentClick(e) {
+			function onDocumentClick (e) {
 				if (options.closeByDocument) {
 					if ($(e.target).is('.avgrund-overlay, .avgrund-close')) {
 						e.preventDefault();
@@ -64,18 +64,15 @@
 				}
 			}
 
-			// show popup
-			function activate() {
-				// check if onLoad is a function and call it before popin is active
+			function activate () {
 				if (typeof options.onLoad === 'function') {
-					options.onLoad.call(self);
+					options.onLoad(self);
 				}
 
 				setTimeout(function() {
 					body.addClass('avgrund-active');
 				}, 100);
 
-				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
 
 				$('.avgrund-popin').css({
@@ -93,41 +90,29 @@
 					$('.avgrund-popin').addClass('stack');
 				}
 
-				// fixing -webkit overlay 'transform/position:fixed/overflow' issue
-				body.wrapInner('<div class="avgrund-wrap-inner" />');
-
 				body.bind('keyup', onDocumentKeyup);
 				body.bind('click', onDocumentClick);
 			}
 
-			// hide popup
-			function deactivate() {
+			function deactivate () {
 				body.unbind('keyup', onDocumentKeyup);
 				body.unbind('click', onDocumentClick);
 
 				body.removeClass('avgrund-active');
 
-				// prevent multiple overlays
-				$('.avgrund-overlay').remove();
-
-				// remove after small pause to apply special avgrund effect
 				setTimeout(function() {
 					$('.avgrund-popin').remove();
-					$('.avgrund-wrap-inner > *').unwrap();
 				}, 500);
 
-				// check if onUnload is a function and call it after popin is closed
 				if (typeof options.onUnload === 'function') {
-					options.onUnload.call(self);
+					options.onUnload(self);
 				}
 			}
 
-			// init on click or custom event
 			if (options.openOnEvent) {
-				self.bind(options.setEvent, function(e) {
+				self.bind(options.setEvent, function (e) {
 					e.stopPropagation();
 
-					// prevent redirect for href url
 					if ($(e.target).is('a')) {
 						e.preventDefault();
 					}
@@ -138,6 +123,5 @@
 				activate();
 			}
 		});
-
 	};
 })(jQuery);
