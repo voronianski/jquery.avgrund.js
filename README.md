@@ -61,17 +61,17 @@ bower install jquery.avgrund
 ```
 
 ### Update (Feb 25, 2013)
-A bunch of small but very useful fixes and updates, including multiple avgrund popins on a page, removing popins from DOM after deactivation (also fixed an issue to make sure avgrund close effect works) and position:fixed/transform/overflow issue for scrolled pages in -webkit. Highly recommend to update your avgrund to current **1.1.2 version**.
+A bunch of small but very useful fixes and updates, including multiple avgrund popins on a page, removing popins from DOM after deactivation (also fixed an issue to make sure avgrund close effect works) and position:fixed/transform/overflow issue for scrolled pages in -webkit.
 
 ### Update (Nov 18, 2012)
 Get 2 new useful options for popin that were missed before. Now you can set your custom functions before Avgrund dialog is open and after it was closed.
 
 ```javascript
 $(element).avgrund({
-	onLoad: function() {
+	onLoad: function (elem) {
 		console.log('this function will be called before dialog is initialized');
 	},
-	onUnload: function() {
+	onUnload: function (elem) {
 		console.log('that will be shown after dialog is closed');
 	}
 });
@@ -98,7 +98,7 @@ You can use a custom function inside avgrund's template option. Thanks to [juice
 
 ```javascript
 $(element).avgrund({
-	template: function() {
+	template: function (elem) {
 		// return 'your content..' to use string
 	}
 });
