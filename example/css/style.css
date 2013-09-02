@@ -44,7 +44,6 @@ pre, code {
 }
 
 .buttons {
-	width: 390px;
 	height: 75px;
 	margin: 0 auto;
 }
@@ -133,4 +132,8 @@ pre, code {
 
 .dribble:hover {
 	background: rgba(241, 118, 122, 1);
+}
+
+.closeicon {
+	font-size: larger;
 }
