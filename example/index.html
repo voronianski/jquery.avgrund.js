@@ -19,7 +19,8 @@
 		<p>Avgrund is a jQuery plugin for modal boxes and popups. It uses interesting concept showing depth between popup and page. It works in all modern browsers and gracefully degrade in those that do not support CSS transitions and transformations (e.g. in IE 6-9 has standard behavior). File size is under 2Kb, MIT Licensed.</p>
 
 		<div class="buttons">
-			<a href="#" id="show" class="button left">Show it</a>
+			<a href="#" id="show" class="button left">Example I</a>
+			<a href="#" id="show2" class="button left">Example II</a>
 			<a href="https://github.com/voronianski/jquery.avgrund.js" class="button download left" target="_blank">Download source</a>
 		</div>
 
@@ -43,7 +44,31 @@
 	onLoad: function (elem) { ... }, // set custom call before popin is inited..
 	onUnload: function (elem) { ... }, // ..and after it was closed
 	template: 'Your content goes here..' // or function (elem) { ... }
-});</pre>
+});
+</pre>
+In addition to accepting strings containing HTML and functions that return html, the 'template' parameter can accept a JQuery object.  This allows creating layouts in a more conventional manner (instead of programmatically) and simply using them, as demonstrated below.  Click Example II button above for a demonstration.
+<pre>
+&lt;script&gt;
+$().ready(function() {
+	$('element').avgrund({
+		...
+		template: $("#MyDivToUseAsDialogue")
+	});
+});
+&lt;/script&gt;
+&lt;body&gt;
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam congue
+risus vel erat rutrum, ut pellentesque mi sollicitudin. Mauris eros mi,
+dignissim ac rhoncus vitae, vestibulum vel nibh.
+
+&lt;div id="MyDivToUseAsDialogue" style="display: none"&gt;
+&lt;p&gt;
+Place any HTML here.  The container element can be styled separately
+and will likely be initially hidden.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+</pre>
 		<p>Avgrund plugin was inspired by Hakimel's Avgrund.js <a href="https://github.com/hakimel/avgrund/" target="_blank">demo</a>.</p>
 
 		<div class="socials">
@@ -56,6 +81,12 @@
 	</div>
 
 	<a href="https://github.com/voronianski/jquery.avgrund.js" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
+
+<div id="MyDivToUseAsDialogue" style="display: none;">
+<p>
+Place any HTML here.  The container element can be styled separately and will likely be initially hidden.
+</p>
+</div>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	<script src="../jquery.avgrund.js"></script>
@@ -73,6 +104,14 @@
 			'<a href="http://twitter.com/voronianski" target="_blank" class="twitter">Twitter</a>' +
 			'<a href="http://dribbble.com/voronianski" target="_blank" class="dribble">Dribbble</a>' +
 			'</div>'
+		});
+		$('#show2').avgrund({
+			height: 200,
+			holderClass: 'custom',
+			showClose: true,
+			showCloseText: '<span class="closeicon">&otimes;</span> close',
+			onBlurContainer: '.container',
+			template: $('#MyDivToUseAsDialogue')
 		});
 	});
 	</script>

@@ -33,7 +33,7 @@
 				body = $('body'),
 				maxWidth = options.width > 640 ? 640 : options.width,
 				maxHeight = options.height > 350 ? 350 : options.height,
-				template = typeof options.template === 'function' ? options.template(self) : options.template;
+				template = typeof options.template === 'function' ? options.template(self) : typeof options.template === 'object' ? options.template.html(): options.template;
 
 			body.addClass('avgrund-ready');
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
