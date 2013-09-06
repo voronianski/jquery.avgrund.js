@@ -35,8 +35,8 @@
 				maxHeight = options.height > 350 ? 350 : options.height,
 				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
-			body.addClass('avgrund-ready');
-			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
+			body.addClass('avgrund-ready')
+				.append($('<div/>', {class: 'avgrund-overlay'}).addClass(options.overlayClass));
 
 			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
@@ -56,11 +56,9 @@
 						e.preventDefault();
 						deactivate();
 					}
-				} else {
-					if ($(e.target).is('.avgrund-close')) {
-						e.preventDefault();
-						deactivate();
-					}
+				} else if ($(e.target).is('.avgrund-close')) {
+					e.preventDefault();
+					deactivate();
 				}
 			}
 
@@ -73,7 +71,11 @@
 					body.addClass('avgrund-active');
 				}, 100);
 
-				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
+				body.append($('<div/>', {
+						class: 'avgrund-popin',
+						html: template
+					}).addClass(options.holderClass)
+				);
 
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
@@ -82,23 +84,17 @@
 					'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
 				});
 
-				if (options.showClose) {
-					$('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
-				}
+				options.showClose && $('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
 
-				if (options.enableStackAnimation) {
-					$('.avgrund-popin').addClass('stack');
-				}
+				options.enableStackAnimation && $('.avgrund-popin').addClass('stack');
 
-				body.bind('keyup', onDocumentKeyup);
-				body.bind('click', onDocumentClick);
+				body.bind('keyup', onDocumentKeyup).bind('click', onDocumentClick);
 			}
 
 			function deactivate () {
-				body.unbind('keyup', onDocumentKeyup);
-				body.unbind('click', onDocumentClick);
-
-				body.removeClass('avgrund-active');
+				body.unbind('keyup', onDocumentKeyup)
+					.unbind('click', onDocumentClick)
+					.removeClass('avgrund-active');
 
 				setTimeout(function() {
 					$('.avgrund-popin').remove();
