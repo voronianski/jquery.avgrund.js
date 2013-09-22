@@ -33,7 +33,11 @@
 				body = $('body'),
 				maxWidth = options.width > 640 ? 640 : options.width,
 				maxHeight = options.height > 350 ? 350 : options.height,
-				template = typeof options.template === 'function' ? options.template(self) : options.template;
+				template = typeof options.template === 'function' ?
+					options.template(self) :
+					options.template instanceof jQuery ?
+						options.template.html() :
+						options.template;
 
 			body.addClass('avgrund-ready');
 			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
@@ -56,11 +60,9 @@
 						e.preventDefault();
 						deactivate();
 					}
-				} else {
-					if ($(e.target).is('.avgrund-close')) {
+				} else if ($(e.target).is('.avgrund-close')) {
 						e.preventDefault();
 						deactivate();
-					}
 				}
 			}
 
@@ -90,15 +92,14 @@
 					$('.avgrund-popin').addClass('stack');
 				}
 
-				body.bind('keyup', onDocumentKeyup);
-				body.bind('click', onDocumentClick);
+				body.bind('keyup', onDocumentKeyup)
+					.bind('click', onDocumentClick);
 			}
 
 			function deactivate () {
-				body.unbind('keyup', onDocumentKeyup);
-				body.unbind('click', onDocumentClick);
-
-				body.removeClass('avgrund-active');
+				body.unbind('keyup', onDocumentKeyup)
+					.unbind('click', onDocumentClick)
+					.removeClass('avgrund-active');
 
 				setTimeout(function() {
 					$('.avgrund-popin').remove();
