@@ -1,0 +1,10 @@
+{
+  "name": "jquery.avgrund",
+  "version": "1.1.6",
+  "description": "Avgrund is a jquery plugin for modal boxes and popups. It uses new concept showing depth between popup and page. It works in all modern browsers and gracefully degrade in those that do not support CSS transitions and transformations",
+  "author": "Dmitri Voronianski <dmitri.voronianski@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1"
+  }
+}
