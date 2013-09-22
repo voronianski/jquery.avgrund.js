@@ -16,7 +16,8 @@
     "node_modules",
     "Gruntfile.js",
     "package.json",
-    "avgrund.jquery.json"
+    "avgrund.jquery.json",
+    "README.md"
   ],
   "dependencies": {
     "jquery": ">=1.4"
