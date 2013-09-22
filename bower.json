@@ -2,11 +2,19 @@
   "name": "jquery.avgrund",
   "version": "1.1.6",
   "main": "jquery.avgrund.js",
+  "authors": ["Dmitri Voronianski <dmitr.voronianski@gmail.com>"],
+  "homepage": "http://labs.voronianski.com/jquery.avgrund.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/voronianski/jquery.avgrund.js"
+  },
+  "license": "MIT",
   "ignore": [
     "**/.*",
     "example",
     "components",
-    "node_modules"
+    "node_modules",
+    "Gruntfile.js"
   ],
   "dependencies": {
     "jquery": ">=1.4"
