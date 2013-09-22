@@ -14,7 +14,9 @@
     "example",
     "components",
     "node_modules",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "package.json",
+    "avgrund.jquery.json"
   ],
   "dependencies": {
     "jquery": ">=1.4"
