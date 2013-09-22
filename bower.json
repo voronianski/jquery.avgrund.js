@@ -5,7 +5,8 @@
   "ignore": [
     "**/.*",
     "example",
-    "components"
+    "components",
+    "node_modules"
   ],
   "dependencies": {
     "jquery": ">=1.4"
