@@ -115,7 +115,7 @@ $(element).avgrund({
 });
 ```
 
-*Please note that currently css ``blur`` is not supported in all modern browsers.
+Please note that currently css ``blur`` is not supported in all modern browsers.
 
 ##### openOnEvent - boolean, default: true
 
@@ -138,6 +138,14 @@ $(element).avgrund({
 ```
 
 ##### onLoad - function
+
+If you need to make some preparations or whatever before avgrund popup will be shown, example:
+
+$(element).avgrund({
+	onLoad: function (element) {
+		console.log('This function will be called before dialog is initialized');
+	}
+});
 
 ##### onUnLoad - function
 
