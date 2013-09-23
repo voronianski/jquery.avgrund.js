@@ -6,7 +6,7 @@ It works in all modern browsers and gracefully degrade in those that do not supp
 
 Tested with jQuery versions 1.4+
 
-File size of minified version is ~1Kb.
+File size of minified version is ``~1Kb``.
 
 ## Usage
 
@@ -60,11 +60,11 @@ Here is the list of available avgrund options:
 
 ##### width - string | number, default: '380px'
 
-Set popup width (currently stict to max 640px).
+Set popup width (currently stict to max ``640px``).
 
 ##### height - string | number, default: '280px'
 
-Set popup height (currently strict to max 350px).
+Set popup height (currently strict to max ``350px``).
 
 ##### showClose - boolean, default: false
 
@@ -80,7 +80,7 @@ Allow users to close popup by clicking ``Esc`` button.
 
 ##### closeByDocument -  boolean, default: true
 
-Allow users to close popup by clicking everywhere on ``document`` (except modal of course).
+Allow users to close popup by clicking everywhere on ``document`` (except popup of course).
 
 ##### holderClass - string
 
@@ -99,7 +99,7 @@ results in adding this class to avgrund container:
 
 ##### overlayClass - string
 
-As previous but adds custom css classes to avgrund overlay container.
+Adds custom css classes to avgrund overlay container.
 
 ##### enableStackAnimation - boolean, default: false
 
@@ -107,7 +107,7 @@ Possibility to add a bit different popup hiding animation type.
 
 ##### onBlurContainer - string
 
-Class name for container element that will be blured when popup appears, example:
+Class name for container element that will be blurred when popup appears, example:
 
 ```javascript
 $(element).avgrund({
@@ -129,7 +129,7 @@ $(document).avgrund({
 
 ##### setEvent - string, default: 'click'
 
-With this option you can manage events that will open popup on certain element
+With this option you can manage events that will open popup on certain element:
 
 ```javascript
 $(element).avgrund({
@@ -163,7 +163,7 @@ $(element).avgrund({
 
 ##### template - string | function | jQuery object
 
-Specify your content for popin here, it can be a ``string`` value:
+Specify your content for popin here, it can be ``string`` value:
 
 ```javascript
 $(element).avgrund({
@@ -171,7 +171,7 @@ $(element).avgrund({
 });
 ```
 
-or function:
+or ``function`` that returns content itself:
 
 ```javascript
 $(element).avgrund({
@@ -181,7 +181,7 @@ $(element).avgrund({
 });
 ```
 
-Also it accepts jQuery objects, you can create element with content inside your app:
+Also it accepts jQuery objects, so you can create element with content inside your app:
 
 ```html
 <div class="content" style="display: none;">
@@ -189,7 +189,7 @@ Also it accepts jQuery objects, you can create element with content inside your 
 </div>
 ```
 
-and use it for ``template`` of popin:
+and use it in ``template`` of popin:
 
 ```javascript
 $('element').avgrund({
@@ -221,8 +221,7 @@ A bunch of small but very useful fixes and updates, including multiple avgrund p
 Get 2 new useful options for popin that were missed before. Now you can set your custom functions before Avgrund dialog is open and after it was closed.
 
 ### Update (Sep 30, 2012)
-Some new updates include initializing popin without event. Also now you can set up your own event for an element.
-You can use a custom function inside avgrund's template option. Thanks to [juice49](https://github.com/juice49) for pull request.
+Some new updates include initializing popin without event. Also now you can set up your own event for an element. Added ability to use a custom function inside avgrund's template option. Thanks to [juice49](https://github.com/juice49) for pull request.
 
 ### Update (Aug 31, 2012)
 New options added - disable closing popup by 'Esc' and 'Document click'. Blur css filter for browsers that support it (seems only webkit ones for now).
