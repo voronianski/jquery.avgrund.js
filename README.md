@@ -58,13 +58,13 @@ More detailed information on every option you can find [here](https://github.com
 
 Here is the list of available avgrund options:
 
-##### width
+##### width - string | number, default: '380px'
 
-Set popup width (currently stict to max 640px)
+Set popup width (currently stict to max 640px).
 
-##### height
+##### height - string | number, default: '280px'
 
-Set popup height (currently strict to max 350px)
+Set popup height (currently strict to max 350px).
 
 ##### showClose - boolean, default: false
 
@@ -141,15 +141,61 @@ $(element).avgrund({
 
 If you need to make some preparations or whatever before avgrund popup will be shown, example:
 
+```javascript
 $(element).avgrund({
 	onLoad: function (element) {
 		console.log('This function will be called before dialog is initialized');
 	}
 });
+```
 
 ##### onUnLoad - function
 
+This function will be executed after popup was closed, example:
+
+```javascript
+$(element).avgrund({
+	onUnload: function (elem) {
+		console.log('This message will be shown after dialog is closed');
+	}
+});
+```
+
 ##### template - string | function | jQuery object
+
+Specify your content for popin here, it can be a ``string`` value:
+
+```javascript
+$(element).avgrund({
+	template: '<p>This is popin content!</p>'
+});
+```
+
+or function:
+
+```javascript
+$(element).avgrund({
+	template: function (element) {
+		// return 'your content..'
+	}
+});
+```
+
+Also it accepts jQuery objects, you can create element with content inside your app:
+
+```html
+<div class="content" style="display: none;">
+	My content for popin!
+</div>
+```
+
+and use it for ``template`` of popin:
+
+```javascript
+$('element').avgrund({
+	template: $('.content')
+});
+```
 
 ## Demo
 
@@ -160,20 +206,7 @@ Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 ## Changelog
 
 ### Update (Sep 22, 2013)
-Added support jQuery selectors in template option. Now you can create element with content inside your app:
-
-```html
-<div class="content" style="display:none;">
-	My content for popin!
-</div>
-```
-and use it for ``template`` of popin:
-
-```javascript
-$('element').avgrund({
-	template: $('.content')
-});
-```
+Added support jQuery selectors in template option.
 
 ### Update (June 15, 2013)
 Better fix for overlay and long content pages, minor add-ons.
@@ -181,53 +214,15 @@ Better fix for overlay and long content pages, minor add-ons.
 ### Update (May 26, 2013)
 Few fixes, and plugin is available as bower package now. So you can simply install it as:
 
-```bash
-bower install jquery.avgrund
-```
-
 ### Update (Feb 25, 2013)
 A bunch of small but very useful fixes and updates, including multiple avgrund popins on a page, removing popins from DOM after deactivation (also fixed an issue to make sure avgrund close effect works) and position:fixed/transform/overflow issue for scrolled pages in -webkit.
 
 ### Update (Nov 18, 2012)
 Get 2 new useful options for popin that were missed before. Now you can set your custom functions before Avgrund dialog is open and after it was closed.
 
-```javascript
-$(element).avgrund({
-	onLoad: function (elem) {
-		console.log('this function will be called before dialog is initialized');
-	},
-	onUnload: function (elem) {
-		console.log('that will be shown after dialog is closed');
-	}
-});
-```
-
 ### Update (Sep 30, 2012)
-Some new updates include initializing popin without event:
-
-```javascript
-$(document).avgrund({
-	openOnEvent: false // set to false to use avgrund on load
-});
-```
-
-Also now you can set up your own event for an element:
-
-```javascript
-$(element).avgrund({
-	setEvent: 'mouseover' // will open popin on element's mouseover
-});
-```
-
+Some new updates include initializing popin without event. Also now you can set up your own event for an element.
 You can use a custom function inside avgrund's template option. Thanks to [juice49](https://github.com/juice49) for pull request.
-
-```javascript
-$(element).avgrund({
-	template: function (elem) {
-		// return 'your content..' to use string
-	}
-});
-```
 
 ### Update (Aug 31, 2012)
 New options added - disable closing popup by 'Esc' and 'Document click'. Blur css filter for browsers that support it (seems only webkit ones for now).
