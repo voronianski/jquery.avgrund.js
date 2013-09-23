@@ -149,7 +149,7 @@ $(element).avgrund({
 });
 ```
 
-##### onUnLoad - function
+##### onUnload - function
 
 This function will be executed after popup was closed, example:
 
