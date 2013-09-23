@@ -6,7 +6,7 @@ It works in all modern browsers and gracefully degrade in those that do not supp
 
 Tested with jQuery versions 1.4+
 
-File size is ~1Kb when minified.
+File size of minified version is ~1Kb.
 
 ## Usage
 
@@ -16,7 +16,7 @@ You can simply include javascript file and init Avgrund with one line:
 $('element').avgrund();
 ```
 
-and linking 'avgrund.css' file to the project:
+and linking ``avgrund.css`` file to the project:
 
 ```html
 <link rel="stylesheet" href="path/to/your/avgrund.css">
@@ -28,7 +28,9 @@ If you use [bower](https://github.com/bower/bower) then you can simply install i
 bower install jquery.avgrund
 ```
 
-You're also able to use some of the options that let you customize it as you wish, more details on every option you can find [here](https://github.com/voronianski/jquery.avgrund.js#Documentation).
+### Options
+
+You're also able to use some of the options that let you customize it as you wish:
 
 ```javascript
 $('element').avgrund({
@@ -50,15 +52,24 @@ $('element').avgrund({
 });
 ```
 
+More detailed information on every option you can find [here](https://github.com/voronianski/jquery.avgrund.js#Documentation).
+
 ## Documentation
 
-Here is the list of available options:
+Here is the list of available avgrund options:
 
 ##### width
 
 ##### height
 
 ##### showClose
+
+##### showCloseText
+
+##### closeByEscape (boolean, default: true)
+
+##### closeByDocument
+###### (boolean, default: true)
 
 ## Demo
 
