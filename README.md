@@ -6,11 +6,11 @@ It works in all modern browsers and gracefully degrade in those that do not supp
 
 Tested with jQuery versions 1.4+
 
-File size is ~1.9Kb
+File size is ~1Kb when minified.
 
 ## Usage
 
-You can simply init Avgrund with one line:
+You can simply include javascript file and init Avgrund with one line:
 
 ```javascript
 $('element').avgrund();
@@ -22,7 +22,13 @@ and linking 'avgrund.css' file to the project:
 <link rel="stylesheet" href="path/to/your/avgrund.css">
 ```
 
-You're also able to use some of the options that let you customize it as you wish.
+If you use [bower](https://github.com/bower/bower) then you can simply install it as:
+
+```bash
+bower install jquery.avgrund
+```
+
+You're also able to use some of the options that let you customize it as you wish, more details on every option you can find [here](https://github.com/voronianski/jquery.avgrund.js#Documentation).
 
 ```javascript
 $('element').avgrund({
@@ -43,6 +49,18 @@ $('element').avgrund({
 	template: 'Your string content goes here..' // or function (elem) { ... }, or selector $('.content')
 });
 ```
+
+## Documentation
+
+Here is the list of available options:
+
+##### width
+
+##### height
+
+##### showClose
+
+## Demo
 
 Check the example here: http://labs.voronianski.com/jquery.avgrund.js/
 
