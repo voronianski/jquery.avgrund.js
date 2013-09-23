@@ -60,16 +60,88 @@ Here is the list of available avgrund options:
 
 ##### width
 
+Set popup width (currently stict to max 640px)
+
 ##### height
 
-##### showClose
+Set popup height (currently strict to max 350px)
 
-##### showCloseText
+##### showClose - boolean, default: false
 
-##### closeByEscape (boolean, default: true)
+Show/hide close button.
 
-##### closeByDocument
-###### (boolean, default: true)
+##### showCloseText - string
+
+If you decided to show close button then you probably want to add close text to it.
+
+##### closeByEscape - boolean, default: true
+
+Allow users to close popup by clicking ``Esc`` button.
+
+##### closeByDocument -  boolean, default: true
+
+Allow users to close popup by clicking everywhere on ``document`` (except modal of course).
+
+##### holderClass - string
+
+Adds custom css classes to avgrund popup, example:
+
+```javascript
+$(element).avgrund({
+	holderClass: 'my-custom-class'
+});
+```
+
+results in adding this class to avgrund container:
+```html
+<div class="avgrund-popin my-custom-class">...</div>
+```
+
+##### overlayClass - string
+
+As previous but adds custom css classes to avgrund overlay container.
+
+##### enableStackAnimation - boolean, default: false
+
+Possibility to add a bit different popup hiding animation type.
+
+##### onBlurContainer - string
+
+Class name for container element that will be blured when popup appears, example:
+
+```javascript
+$(element).avgrund({
+	onBlurContainer: '#my-container'
+});
+```
+
+*Please note that currently css ``blur`` is not supported in all modern browsers.
+
+##### openOnEvent - boolean, default: true
+
+If you want to show avgrund on page load set this option value to ``false``, example:
+
+```javascript
+$(document).avgrund({
+	openOnEvent: false
+});
+```
+
+##### setEvent - string, default: 'click'
+
+With this option you can manage events that will open popup on certain element
+
+```javascript
+$(element).avgrund({
+	setEvent: 'mouseover' // will open popin on element's mouseover
+});
+```
+
+##### onLoad - function
+
+##### onUnLoad - function
+
+##### template - string | function | jQuery object
 
 ## Demo
 
