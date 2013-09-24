@@ -15,8 +15,15 @@ module.exports = function (grunt) {
 				}
 			}
 		},
+		jshint: {
+			options: {
+				ignores: ['jquery.avgrund.min.js']
+			},
+			files: ['*.js']
+		}
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.registerTask('default', ['uglify']);
+	grunt.registerTask('default', ['jshint', 'uglify']);
 };
