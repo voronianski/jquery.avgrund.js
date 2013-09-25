@@ -155,7 +155,7 @@ This function will be executed after popup was closed, example:
 
 ```javascript
 $(element).avgrund({
-	onUnload: function (elem) {
+	onUnload: function (element) {
 		console.log('This message will be shown after dialog is closed');
 	}
 });
