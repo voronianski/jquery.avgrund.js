@@ -41,7 +41,7 @@ In your server-side node.js (e.g. [express](http://expressjs.com/) app):
 
 ```javascript
 app.use(require('browserify')({
-	require : [ 'jquery-browserify', 'jquery.avgrund' ]
+	require : ['jquery-browserify', 'jquery.avgrund']
 }));
 ```
 
