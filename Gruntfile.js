@@ -6,7 +6,7 @@ module.exports = function (grunt) {
 			options: {
 				banner: '/*! <%= pkg.name %> - v<%= pkg.version %> (<%= pkg.homepage %>) */\n',
 				mangle: {
-					except: ['jQuery', '$']
+					except: ['jQuery', '$', 'define', 'module', 'exports']
 				}
 			},
 			avgrund: {

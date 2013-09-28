@@ -1,4 +1,10 @@
 {
+	"predef": [
+		"define",
+		"module",
+		"exports"
+	],
+
 	"asi" : false,
 	"bitwise" : true,
 	"boss" : false,
