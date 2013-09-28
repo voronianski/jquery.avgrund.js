@@ -28,6 +28,30 @@ If you use [bower](https://github.com/bower/bower) then you can simply install i
 bower install jquery.avgrund
 ```
 
+#### Using plugin with [Browserify](http://browserify.org/)
+
+At first install plugin via NPM:
+
+```bash
+npm install jquery.avgrund
+npm install jquery-browserify
+```
+
+In your server-side node.js (e.g. [express](http://expressjs.com/) app):
+
+```javascript
+app.use(require('browserify')({
+	require : [ 'jquery-browserify', 'jquery.avgrund' ]
+}));
+```
+
+And in your browser-side you can init plugin now:
+
+```javascript
+var $ = require('jquery-browserify');
+require('jquery.avgrund')($);
+```
+
 ### Options
 
 You're also able to use some of the options that let you customize it as you wish:
@@ -204,6 +228,9 @@ Check the example here: http://labs.voronianski.com/jquery.avgrund.js/
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
 ## Changelog
+
+### Update (Sep 28, 2013)
+Added AMD and CommonJS styles support.
 
 ### Update (Sep 22, 2013)
 Added support jQuery selectors in template option.
