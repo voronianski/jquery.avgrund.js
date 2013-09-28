@@ -28,7 +28,7 @@ If you use [bower](https://github.com/bower/bower) then you can simply install i
 bower install jquery.avgrund
 ```
 
-#### Using plugin with [Browserify](http://browserify.org/)
+### Using plugin with [Browserify](http://browserify.org/)
 
 At first install plugin via NPM:
 
