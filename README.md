@@ -262,3 +262,5 @@ We still have some issues to fix and make avgrund better, if you have any sugges
 MIT Licensed
 
 **enjoy!**
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voronianski/jquery.avgrund.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
