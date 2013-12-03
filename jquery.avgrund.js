@@ -42,6 +42,7 @@
 		return this.each(function() {
 			var self = $(this),
 				body = $('body'),
+				position = 0,
 				maxWidth = options.width > 640 ? 640 : options.width,
 				maxHeight = options.height > 350 ? 350 : options.height,
 				template = typeof options.template === 'function' ?
@@ -51,7 +52,8 @@
 						options.template;
 
 			body.addClass('avgrund-ready');
-			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
+			body.find('.avgrund-overlay').length == 0)
+				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 
 			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
@@ -88,6 +90,9 @@
 
 				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
 
+				position = $(document).scrollTop();
+				$("html").css('overflow', 'auto');
+
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
 					'height': maxHeight + 'px',
@@ -111,6 +116,9 @@
 				body.unbind('keyup', onDocumentKeyup)
 					.unbind('click', onDocumentClick)
 					.removeClass('avgrund-active');
+
+				$("html").removeAttr('style');
+				window.scrollTo(0, position);
 
 				setTimeout(function() {
 					$('.avgrund-popin').remove();
