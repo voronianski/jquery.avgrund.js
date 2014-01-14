@@ -1,5 +1,8 @@
 # Avgrund
 
+[![Clone in Koding](http://learn.koding.com/btn/clone_d.png)][koding]
+[koding]: https://koding.com/Teamwork?import=https://github.com/voronianski/jquery.avgrund.js/archive/master.zip&c=git3
+
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voronianski/jquery.avgrund.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge") 
 
 [![Gittip](http://img.shields.io/gittip/voronianski.png)](https://www.gittip.com/voronianski/)
