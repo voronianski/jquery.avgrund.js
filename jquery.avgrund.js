@@ -51,7 +51,8 @@
 						options.template;
 
 			body.addClass('avgrund-ready');
-			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
+			if ($(".avgrund-overlay").length == 0)
+				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 
 			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
