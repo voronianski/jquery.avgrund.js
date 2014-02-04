@@ -92,7 +92,7 @@
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
 					'height': maxHeight + 'px',
-					'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
+					'margin-left': '-' + (maxWidth / 2) + 'px',
 					'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
 				});
 
