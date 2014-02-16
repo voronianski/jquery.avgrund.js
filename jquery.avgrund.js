@@ -51,7 +51,8 @@
 						options.template;
 
 			body.addClass('avgrund-ready');
-			body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
+			if ($(".avgrund-overlay").length == 0)
+				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
 
 			if (options.onBlurContainer !== '') {
 				$(options.onBlurContainer).addClass('avgrund-blur');
@@ -91,7 +92,7 @@
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
 					'height': maxHeight + 'px',
-					'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
+					'margin-left': '-' + (maxWidth / 2) + 'px',
 					'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
 				});
 
