@@ -44,11 +44,7 @@
 				body = $('body'),
 				maxWidth = options.width > 640 ? 640 : options.width,
 				maxHeight = options.height > 350 ? 350 : options.height,
-				template = typeof options.template === 'function' ?
-					options.template(self) :
-					options.template instanceof jQuery ?
-						options.template.html() :
-						options.template;
+				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
 			body.addClass('avgrund-ready');
 
@@ -89,7 +85,9 @@
 					body.addClass('avgrund-active');
 				}, 100);
 
-				body.append('<div class="avgrund-popin ' + options.holderClass + '">' + template + '</div>');
+				var $popin = $('<div class="avgrund-popin ' + options.holderClass + '"></div>');
+				$popin.append(template);
+				body.append($popin);
 
 				$('.avgrund-popin').css({
 					'width': maxWidth + 'px',
