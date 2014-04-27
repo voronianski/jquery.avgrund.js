@@ -34,7 +34,8 @@
 			setEvent: 'click',
 			onLoad: false,
 			onUnload: false,
-			template: '<p>This is test popin content!</p>'
+			template: '<p>This is test popin content!</p>',
+            afterComplete: false
 		};
 
 		options = $.extend(defaults, options);
@@ -106,6 +107,10 @@
 
 				body.bind('keyup', onDocumentKeyup)
 					.bind('click', onDocumentClick);
+
+				if (typeof options.afterComplete === 'function') {
+					options.afterComplete(self);
+				}
 			}
 
 			function deactivate () {
