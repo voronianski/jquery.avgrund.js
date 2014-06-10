@@ -158,6 +158,18 @@ $(element).avgrund({
 });
 ```
 
+##### afterComplete - function
+
+This function will be executed after popup was closed, example:
+
+```javascript
+$(element).avgrund({
+	afterComplere: function (element) {
+		console.log('This message will be shown after dialog is opened');
+	}
+});
+```
+
 ##### template - string | function | jQuery object
 
 Specify your content for popin here, it can be ``string`` value:
