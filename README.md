@@ -1,9 +1,8 @@
 # Avgrund
 
-[![Clone in Koding](http://learn.koding.com/btn/clone_d.png)][koding]
-[koding]: https://koding.com/Teamwork?import=https://github.com/voronianski/jquery.avgrund.js/archive/master.zip&c=git3
+Fork of [voronianski/jquery.avgrund.js](https://github.com/voronianski/jquery.avgrund.js)
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voronianski/jquery.avgrund.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+Current version: 0.1.0.0
 
 Avgrund is a jQuery plugin for your modal boxes and popups. It uses new concept showing depth between popup and page.
 
@@ -27,36 +26,6 @@ and linking ``avgrund.css`` file to the project:
 <link rel="stylesheet" href="path/to/your/avgrund.css">
 ```
 
-If you use [bower](https://github.com/bower/bower) then you can simply install it as:
-
-```bash
-bower install jquery.avgrund
-```
-
-### Using plugin with [Browserify](http://browserify.org/)
-
-At first install plugin via NPM:
-
-```bash
-npm install jquery.avgrund
-npm install jquery-browserify
-```
-
-In your server-side node.js (e.g. [express](http://expressjs.com/) app):
-
-```javascript
-app.use(require('browserify')({
-	require : ['jquery-browserify', 'jquery.avgrund']
-}));
-```
-
-And in your browser-side you can init plugin now:
-
-```javascript
-var $ = require('jquery-browserify');
-require('jquery.avgrund')($);
-```
-
 ### Options
 
 You're also able to use some of the options that let you customize it as you wish:
@@ -77,6 +46,7 @@ $('element').avgrund({
 	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
 	onLoad: function (elem) { ... }, // set custom call before popin is inited..
 	onUnload: function (elem) { ... }, // ..and after it was closed
+	afterComplete: function (elem) { ... }, // fire after the popin has been loaded and displayed
 	template: 'Your string content goes here..' // or function (elem) { ... }, or selector $('.content')
 });
 ```
@@ -190,6 +160,18 @@ $(element).avgrund({
 });
 ```
 
+##### afterComplete - function
+
+This function will be executed after popup was closed, example:
+
+```javascript
+$(element).avgrund({
+	afterComplere: function (element) {
+		console.log('This message will be shown after dialog is opened');
+	}
+});
+```
+
 ##### template - string | function | jQuery object
 
 Specify your content for popin here, it can be ``string`` value:
@@ -227,8 +209,6 @@ $('element').avgrund({
 ```
 
 ## Demo
-
-Check the example here: http://labs.voronianski.com/jquery.avgrund.js/
 
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
