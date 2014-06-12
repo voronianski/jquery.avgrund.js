@@ -214,12 +214,6 @@ Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
 ## Changelog
 
-### Update (Apr 27, 2014)
-Added after complete event
-Position popin on center
-
-## Version 0.1.0.0
-
 ### Update (Sep 28, 2013)
 Added AMD and CommonJS styles support.
 
