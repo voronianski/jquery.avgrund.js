@@ -49,6 +49,7 @@
 				maxHeight = options.height > 350 ? 350 : options.height,
 				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
+			body.addClass('avgrund-ready');
 			options.container.addClass('avgrund-ready avg-container');
 
 			if ($('.avgrund-overlay').length === 0) {
