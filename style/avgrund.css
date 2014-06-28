@@ -35,7 +35,7 @@ html, body {
 	filter: alpha(opacity=0);
 }
 
-body.avgrund-ready,
+.avgrund-ready,
 .avgrund-ready .avgrund-popin,
 .avgrund-ready .avgrund-overlay {
 	-webkit-transform-origin: 50% 50%;
@@ -51,7 +51,7 @@ body.avgrund-ready,
 	transition: 0.3s all ease-out;
 }
 
-body.avgrund-active {
+.avgrund-active .avg-container{
 	-webkit-transform: scale(0.9);
 	-moz-transform: scale(0.9);
 	-ms-transform: scale(0.9);
@@ -76,7 +76,11 @@ body.avgrund-active {
 	visibility: visible;
 	opacity: .5;
 	filter: alpha(opacity=50);
-	height: 20000px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 }
 
 .avgrund-popin.stack {
