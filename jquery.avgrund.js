@@ -35,8 +35,6 @@
 			onLoad: false,
 			onUnload: false,
 			template: '<p>This is test popin content!</p>',
-
-			// added
 			container : $('#container')
 		};
 
