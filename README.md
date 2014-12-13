@@ -1,8 +1,5 @@
 # Avgrund
 
-[![Clone in Koding](http://learn.koding.com/btn/clone_d.png)][koding]
-[koding]: https://koding.com/Teamwork?import=https://github.com/voronianski/jquery.avgrund.js/archive/master.zip&c=git3
-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voronianski/jquery.avgrund.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 Avgrund is a jQuery plugin for your modal boxes and popups. It uses new concept showing depth between popup and page.
