@@ -265,3 +265,4 @@ MIT Licensed
 
 **enjoy!**
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voronianski/jquery.avgrund.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
