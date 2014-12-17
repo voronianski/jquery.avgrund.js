@@ -2,6 +2,8 @@
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/voronianski/jquery.avgrund.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+[![Libscore Badge](http://img.shields.io/badge/libscore-34-brightgreen.svg?style=flat-square)](http://libscore.com/#$.fn.avgrund)
+
 Avgrund is a jQuery plugin for your modal boxes and popups. It uses new concept showing depth between popup and page.
 
 It works in all modern browsers and gracefully degrade in those that do not support CSS transitions and transformations.
