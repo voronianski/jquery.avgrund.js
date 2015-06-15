@@ -1,12 +1,8 @@
 body {
-	background: #FFF;
+	background: url(http://subtlepatterns.com/patterns/dark_dotted.png) repeat #222;
 	color: #666;
 	font: 14px/22px 'Open Sans', Arial, sans-serif;
 	text-align: justify;	
-}
-
-html {
-	background: url(http://subtlepatterns.com/patterns/dark_dotted.png) repeat #222;
 }
 
 a {
@@ -21,8 +17,10 @@ h1 {
 	color: #333;
 	font-family: 'Headland One', Georgia, serif;
 	font-size: 40px;
+	line-height: 50px;
 	text-align: center;
 	margin: 0 0 25px;
+	padding-top: 45px;
 }
 
 pre, code {
@@ -38,9 +36,9 @@ pre, code {
 }
 
 .container {
-	width: 600px;
-	margin: 0 auto;
-	padding: 45px 0 0;
+	padding: 0 30%;
+	background: #fff;
+	min-height: 100%;
 }
 
 .buttons {
@@ -77,7 +75,8 @@ pre, code {
 
 .socials {
 	font-size: 12px;
-	margin: 10px 0 0;
+	padding: 20px 0 20px;
+	text-align: right;
 }
 
 /* Custom styles for popin & close button */

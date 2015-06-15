@@ -27,15 +27,20 @@ html, body {
 	background: #000;
 	width: 100%;
 	position: relative;
-	top: -1500px;
 	left: 0;
 	z-index: 101;
 	visibility: hidden;
 	opacity: 0;
 	filter: alpha(opacity=0);
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: -40;
 }
 
-body.avgrund-ready,
+.avgrund-ready,
 .avgrund-ready .avgrund-popin,
 .avgrund-ready .avgrund-overlay {
 	-webkit-transform-origin: 50% 50%;
@@ -51,7 +56,7 @@ body.avgrund-ready,
 	transition: 0.3s all ease-out;
 }
 
-body.avgrund-active {
+.avgrund-active .avg-container{
 	-webkit-transform: scale(0.9);
 	-moz-transform: scale(0.9);
 	-ms-transform: scale(0.9);
@@ -70,13 +75,19 @@ body.avgrund-active {
 	-ms-transform: scale(1.1);
 	-o-transform: scale(1.1);
 	transform: scale(1.1);
+	z-index: 40;
 }
 
 .avgrund-active .avgrund-overlay {
 	visibility: visible;
 	opacity: .5;
 	filter: alpha(opacity=50);
-	height: 20000px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 30;
 }
 
 .avgrund-popin.stack {

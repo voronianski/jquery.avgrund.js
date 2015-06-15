@@ -14,7 +14,7 @@
 	<![endif]-->
 </head>
 <body>
-	<div class="container">
+	<div id="container" class="container">
 		<h1>Avgrund Modal.</h1>
 		<p>Avgrund is a jQuery plugin for modal boxes and popups. It uses interesting concept showing depth between popup and page. It works in all modern browsers and gracefully degrade in those that do not support CSS transitions and transformations (e.g. in IE 6-9 has standard behavior). File size is under 2Kb, MIT Licensed.</p>
 
@@ -27,31 +27,13 @@
 		<pre>$('element').avgrund();</pre>
 
 		<p>Avgrund has several options for you to customize it easily:</p>
-		<pre>$('element').avgrund({
-	width: 380, // max is 640px
-	height: 280, // max is 350px
-	showClose: false, // switch to 'true' for enabling close button
-	showCloseText: '', // type your text for close button
-	closeByEscape: true, // enables closing popup by 'Esc'..
-	closeByDocument: true, // ..and by clicking document itself
-	holderClass: '', // lets you name custom class for popin holder..
-	overlayClass: '', // ..and overlay block
-	enableStackAnimation: false, // another animation type
-	onBlurContainer: '', // enables blur filter for specified block
-	openOnEvent: true, // set to 'false' to init on load
-	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
-	onLoad: function (elem) { ... }, // set custom call before popin is inited..
-	onUnload: function (elem) { ... }, // ..and after it was closed
-	template: 'String content..' // or function (elem) { }, or $('.content')
-});</pre>
+
 		<p>Avgrund plugin was inspired by Hakimel's Avgrund.js <a href="https://github.com/hakimel/avgrund/" target="_blank">demo</a>.</p>
 
 		<div class="socials">
-			<div class="right">
 				<span>&copy;2012</span>
 				<a href="http://twitter.com/voronianski/" target="blank">@voronianski</a> /
 				<a href="http://pixelhunter.me/" target="blank">pixelhunter.me</a>
-			</div>
 		</div>
 	</div>
 
@@ -66,6 +48,7 @@
 			holderClass: 'custom',
 			showClose: true,
 			showCloseText: 'close',
+			container: $('#container'),
 			onBlurContainer: '.container',
 			template: '<p>So implement your design and place content here! If you want to close modal, please hit "Esc", click somewhere on the screen or use special button.</p>' +
 			'<div>' +

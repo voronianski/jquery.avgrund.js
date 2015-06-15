@@ -34,7 +34,8 @@
 			setEvent: 'click',
 			onLoad: false,
 			onUnload: false,
-			template: '<p>This is test popin content!</p>'
+			template: '<p>This is test popin content!</p>',
+			container : $('#container')
 		};
 
 		options = $.extend(defaults, options);
@@ -47,6 +48,7 @@
 				template = typeof options.template === 'function' ? options.template(self) : options.template;
 
 			body.addClass('avgrund-ready');
+			options.container.addClass('avgrund-ready avg-container');
 
 			if ($('.avgrund-overlay').length === 0) {
 				body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');

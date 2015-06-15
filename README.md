@@ -64,6 +64,7 @@ $('element').avgrund({
 	height: 280, // max is 350px
 	showClose: false, // switch to 'true' for enabling close button
 	showCloseText: '', // type your text for close button
+	container: $('#container') // the container that gets scaled when the modal is in view
 	closeByEscape: true, // enables closing popup by 'Esc'..
 	closeByDocument: true, // ..and by clicking document itself
 	holderClass: '', // lets you name custom class for popin holder..
