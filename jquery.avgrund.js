@@ -34,6 +34,7 @@
 			setEvent: 'click',
 			onLoad: false,
 			onUnload: false,
+			onClosing: false,
 			template: '<p>This is test popin content!</p>'
 		};
 
@@ -109,6 +110,13 @@
 			}
 
 			function deactivate () {
+				if (typeof options.onClosing === 'function')
+				{
+					if (options.onClosing(self) === false)
+					{
+						return false;
+					}
+				}
 				body.unbind('keyup', onDocumentKeyup)
 					.unbind('click', onDocumentClick)
 					.removeClass('avgrund-active');
