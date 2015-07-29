@@ -110,10 +110,8 @@
 			}
 
 			function deactivate () {
-				if (typeof options.onClosing === 'function')
-				{
-					if (options.onClosing(self) === false)
-					{
+				if (typeof options.onClosing === 'function') {
+					if (options.onClosing(self) === false) {
 						return false;
 					}
 				}
