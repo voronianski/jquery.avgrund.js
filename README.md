@@ -43,7 +43,7 @@ In your server-side node.js (e.g. [express](http://expressjs.com/) app):
 
 ```javascript
 app.use(require('browserify')({
-	require : ['jquery-browserify', 'jquery.avgrund']
+    require : ['jquery-browserify', 'jquery.avgrund']
 }));
 ```
 
@@ -60,21 +60,21 @@ You're also able to use some of the options that let you customize it as you wis
 
 ```javascript
 $('element').avgrund({
-	width: 380, // max is 640px
-	height: 280, // max is 350px
-	showClose: false, // switch to 'true' for enabling close button
-	showCloseText: '', // type your text for close button
-	closeByEscape: true, // enables closing popup by 'Esc'..
-	closeByDocument: true, // ..and by clicking document itself
-	holderClass: '', // lets you name custom class for popin holder..
-	overlayClass: '', // ..and overlay block
-	enableStackAnimation: false, // enables different type of popin's animation
-	onBlurContainer: '', // enables blur filter for specified block
-	openOnEvent: true, // set to 'false' to init on load
-	setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
-	onLoad: function (elem) { ... }, // set custom call before popin is inited..
-	onUnload: function (elem) { ... }, // ..and after it was closed
-	template: 'Your string content goes here..' // or function (elem) { ... }, or selector $('.content')
+    width: 380, // max is 640px
+    height: 280, // max is 350px
+    showClose: false, // switch to 'true' for enabling close button
+    showCloseText: '', // type your text for close button
+    closeByEscape: true, // enables closing popup by 'Esc'..
+    closeByDocument: true, // ..and by clicking document itself
+    holderClass: '', // lets you name custom class for popin holder..
+    overlayClass: '', // ..and overlay block
+    enableStackAnimation: false, // enables different type of popin's animation
+    onBlurContainer: '', // enables blur filter for specified block
+    openOnEvent: true, // set to 'false' to init on load
+    setEvent: 'click', // use your event like 'mouseover', 'touchmove', etc.
+    onLoad: function (elem) { ... }, // set custom call before popin is inited..
+    onUnload: function (elem) { ... }, // ..and after it was closed
+    template: 'Your string content goes here..' // or function (elem) { ... }, or selector $('.content')
 });
 ```
 
@@ -114,7 +114,7 @@ Adds custom css classes to avgrund popup, example:
 
 ```javascript
 $(element).avgrund({
-	holderClass: 'my-custom-class'
+    holderClass: 'my-custom-class'
 });
 ```
 
@@ -137,7 +137,7 @@ Class name for container element that will be blurred when popup appears, exampl
 
 ```javascript
 $(element).avgrund({
-	onBlurContainer: '#my-container'
+    onBlurContainer: '#my-container'
 });
 ```
 
@@ -149,7 +149,7 @@ If you want to show avgrund on page load set this option value to ``false``, exa
 
 ```javascript
 $(document).avgrund({
-	openOnEvent: false
+    openOnEvent: false
 });
 ```
 
@@ -159,7 +159,7 @@ With this option you can manage events that will open popup on certain element:
 
 ```javascript
 $(element).avgrund({
-	setEvent: 'mouseover' // will open popin on element's mouseover
+    setEvent: 'mouseover' // will open popin on element's mouseover
 });
 ```
 
@@ -169,9 +169,9 @@ If you need to make some preparations or whatever before avgrund popup will be s
 
 ```javascript
 $(element).avgrund({
-	onLoad: function (element) {
-		console.log('This function will be called before dialog is initialized');
-	}
+    onLoad: function (element) {
+        console.log('This function will be called before dialog is initialized');
+    }
 });
 ```
 
@@ -181,9 +181,9 @@ This function will be executed after popup was closed, example:
 
 ```javascript
 $(element).avgrund({
-	onUnload: function (element) {
-		console.log('This message will be shown after dialog is closed');
-	}
+    onUnload: function (element) {
+        console.log('This message will be shown after dialog is closed');
+    }
 });
 ```
 
@@ -193,7 +193,7 @@ Specify your content for popin here, it can be ``string`` value:
 
 ```javascript
 $(element).avgrund({
-	template: '<p>This is popin content!</p>'
+    template: '<p>This is popin content!</p>'
 });
 ```
 
@@ -201,9 +201,9 @@ or ``function`` that returns content itself:
 
 ```javascript
 $(element).avgrund({
-	template: function (element) {
-		// return 'your content..'
-	}
+    template: function (element) {
+        // return 'your content..'
+    }
 });
 ```
 
@@ -211,7 +211,7 @@ Also it accepts jQuery objects (dynamic as well), so you can create element with
 
 ```html
 <div class="content" style="display: none;">
-	My content for popin!
+    My content for popin!
 </div>
 ```
 
@@ -219,7 +219,7 @@ and use it in ``template`` of popin:
 
 ```javascript
 $('element').avgrund({
-	template: $('.content')
+    template: $('.content')
 });
 ```
 

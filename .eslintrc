@@ -1,0 +1,20 @@
+// http://eslint.org/docs/rules
+{
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "strict": 0,
+    "quotes": [2, "single"],
+    "no-underscore-dangle": 0,
+    "no-unused-vars": 1,
+    "no-use-before-define": 0,
+    "camelcase": 0
+  },
+  "globals": {
+    "define": true,
+    "module": true,
+    "exports": true,
+    "jQuery": true
+  }
+}
