@@ -26,6 +26,7 @@
             showCloseText: '',
             closeByEscape: true,
             closeByDocument: true,
+            windowScrollable: false,
             holderClass: '',
             overlayClass: '',
             enableStackAnimation: false,
@@ -53,6 +54,13 @@
                 body.append('<div class="avgrund-overlay ' + options.overlayClass + '"></div>');
             }
 
+            if (options.windowScrollable) {
+                $(".avgrund-overlay").addClass('absolute-overlay');
+            }else{
+                $("html").addClass('avgrund-html-base');
+                $("body").addClass('avgrund-html-base');
+            }
+
             if (options.onBlurContainer !== '') {
                 $(options.onBlurContainer).addClass('avgrund-blur');
             }
@@ -72,8 +80,8 @@
                         deactivate();
                     }
                 } else if ($(e.target).is('.avgrund-close')) {
-                        e.preventDefault();
-                        deactivate();
+                    e.preventDefault();
+                    deactivate();
                 }
             }
 
@@ -90,12 +98,34 @@
                 $popin.append(template);
                 body.append($popin);
 
-                $('.avgrund-popin').css({
-                    'width': maxWidth + 'px',
-                    'height': maxHeight + 'px',
-                    'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
-                    'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
-                });
+                if (options.windowScrollable) {
+                    var w = $(window);
+                    var window_top = w.scrollTop();
+                    var window_height = w.height();
+                    var window_width = w.width();
+                    console.log(window_top);
+                    console.log(window_height);
+                    $('.avgrund-popin').css({
+                        'top' : window_top +  window_height/2,
+                        'width': maxWidth + 'px',
+                        'height': maxHeight + 'px',
+                        'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
+                        'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
+                    });
+                    $(".avgrund-overlay").css({
+                        'height': window_height * 2 + 'px',
+                        'width': window_width * 2 + 'px',
+                        'top': window_top - window_height/2  + 'px',
+                        'left': - window_width/2  + 'px'
+                    });
+                }else{
+                    $('.avgrund-popin').css({
+                        'width': maxWidth + 'px',
+                        'height': maxHeight + 'px',
+                        'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
+                        'margin-top': '-' + (maxHeight / 2 + 10) + 'px'
+                    });
+                }
 
                 if (options.showClose) {
                     $('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
@@ -120,6 +150,11 @@
                     .unbind('click', onDocumentClick)
                     .removeClass('avgrund-active');
 
+                $(".avgrund-overlay.absolute-overlay").css({
+                    'height': '0px',
+                    'top': "0px"
+                });
+
                 setTimeout(function () {
                     $('.avgrund-popin').remove();
                 }, 500);
@@ -133,10 +168,10 @@
                 self.bind(options.setEvent, function (e) {
                     e.stopPropagation();
 
+
                     if ($(e.target).is('a')) {
                         e.preventDefault();
                     }
-
                     activate();
                 });
             } else {
