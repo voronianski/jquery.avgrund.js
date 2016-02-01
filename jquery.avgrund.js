@@ -112,6 +112,11 @@
                     var window_top = w.scrollTop();
                     var window_height = w.height();
                     var window_width = w.width();
+                    var regex = new RegExp("([0-9]*)(%)");
+                    var mutch_w = regex.exec(options.width);
+                    var mutch_h= regex.exec(options.height);
+                    maxWidth  = mutch_w? mutch_w[1] * window_width / 100 : options.height;
+                    maxHeight  = mutch_h? mutch_h[1] * window_height / 100 : options.height;
                     console.log(window_top);
                     console.log(window_height);
                     $('.avgrund-popin').css({
