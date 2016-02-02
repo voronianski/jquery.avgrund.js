@@ -90,6 +90,7 @@
             }
 
             function activate () {
+                var $popin = {};
                 if (typeof options.onLoad === 'function') {
                     options.onLoad(self);
                 }
@@ -98,11 +99,12 @@
                     body.addClass('avgrund-active');
                 }, 100);
                 if(options.useTemplateTag){
-                    $(options.templateTag)
+                    $popin =$(options.templateTag);
+                    $popin
                         .css({display: 'block'})
                         .addClass("avgrund-popin");
                 }else{
-                    var $popin = $('<div class="avgrund-popin ' + options.holderClass + '"></div>');
+                    $popin = $('<div class="avgrund-popin ' + options.holderClass + '"></div>');
                     $popin.append(template);
                     body.append($popin);
                 }
@@ -112,14 +114,22 @@
                     var window_top = w.scrollTop();
                     var window_height = w.height();
                     var window_width = w.width();
+
                     var regex = new RegExp("([0-9]*)(%)");
                     var mutch_w = regex.exec(options.width);
                     var mutch_h= regex.exec(options.height);
+                    console.log(mutch_w);
+                    console.log(mutch_h);
+
                     maxWidth  = mutch_w? mutch_w[1] * window_width / 100 : options.height;
                     maxHeight  = mutch_h? mutch_h[1] * window_height / 100 : options.height;
+
                     console.log(window_top);
                     console.log(window_height);
-                    $('.avgrund-popin').css({
+                    console.log(maxWidth);
+                    console.log(maxHeight);
+
+                    $popin.css({
                         'top' : window_top +  window_height/2,
                         'width': maxWidth + 'px',
                         'height': maxHeight + 'px',
@@ -133,7 +143,7 @@
                         'left': - window_width/2  + 'px'
                     });
                 }else{
-                    $('.avgrund-popin').css({
+                    $popin.css({
                         'width': maxWidth + 'px',
                         'height': maxHeight + 'px',
                         'margin-left': '-' + (maxWidth / 2 + 10) + 'px',
@@ -142,11 +152,11 @@
                 }
 
                 if (options.showClose) {
-                    $('.avgrund-popin').append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
+                    $popin.append('<a href="#" class="avgrund-close">' + options.showCloseText + '</a>');
                 }
 
                 if (options.enableStackAnimation) {
-                    $('.avgrund-popin').addClass('stack');
+                    $popin.addClass('stack');
                 }
 
                 body.bind('keyup', onDocumentKeyup)
@@ -184,8 +194,6 @@
             if (options.openOnEvent) {
                 self.bind(options.setEvent, function (e) {
                     e.stopPropagation();
-
-
                     if ($(e.target).is('a')) {
                         e.preventDefault();
                     }
