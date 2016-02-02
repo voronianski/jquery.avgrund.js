@@ -101,7 +101,7 @@
                 if(options.useTemplateTag){
                     $popin =$(options.templateTag);
                     $popin
-                        .css({display: 'block'})
+                    //.css({display: 'block'})
                         .addClass("avgrund-popin");
                 }else{
                     $popin = $('<div class="avgrund-popin ' + options.holderClass + '"></div>');
@@ -150,6 +150,10 @@
 
                 if (options.enableStackAnimation) {
                     $popin.addClass('stack');
+                }
+
+                if(options.useTemplateTag) {
+                    $popin.css({display: 'block'});
                 }
 
                 body.bind('keyup', onDocumentKeyup)
