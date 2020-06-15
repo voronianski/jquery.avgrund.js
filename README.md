@@ -225,7 +225,7 @@ $('element').avgrund({
 
 ## Demo
 
-Check the example here: http://labs.voronianski.com/jquery.avgrund.js/
+Check the example here: http://labs.voronianski.dev/jquery.avgrund.js/
 
 Inspired by Hakim's demo: https://github.com/hakimel/avgrund/
 
