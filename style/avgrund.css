@@ -1,4 +1,4 @@
-html, body {
+html.avgrund-html-base, body.avgrund-html-base{
 	height: 100%;
 	overflow: auto;
 }
@@ -24,15 +24,27 @@ html, body {
 }
 
 .avgrund-overlay {
-	background: #000;
-	width: 100%;
-	position: relative;
-	top: -1500px;
-	left: 0;
-	z-index: 101;
-	visibility: hidden;
-	opacity: 0;
-	filter: alpha(opacity=0);
+    background: #000;
+    width: 100%;
+    position: relative;
+    top: -1500px;
+    left: 0;
+    z-index: 101;
+    visibility: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.avgrund-overlay.absolute-overlay {
+    background: #000;
+    width: 100%;
+    position: absolute;
+    top:  0px;
+    left: 0;
+    z-index: 101;
+    visibility: hidden;
+    opacity: 0;
+    filter: alpha(opacity=0);
 }
 
 body.avgrund-ready,

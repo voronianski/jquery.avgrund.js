@@ -66,6 +66,7 @@ $('element').avgrund({
     showCloseText: '', // type your text for close button
     closeByEscape: true, // enables closing popup by 'Esc'..
     closeByDocument: true, // ..and by clicking document itself
+    windowScrollable: false, // set true if your page is scrollable
     holderClass: '', // lets you name custom class for popin holder..
     overlayClass: '', // ..and overlay block
     enableStackAnimation: false, // enables different type of popin's animation
