@@ -86,7 +86,7 @@ Here is the list of available avgrund options:
 
 ##### width - string | number, default: '380px'
 
-Set popup width (currently stict to max ``640px``).
+Set popup width (currently strict to max ``640px``).
 
 ##### height - string | number, default: '280px'
 
